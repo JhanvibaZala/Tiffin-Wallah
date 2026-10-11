@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with base URL
 const API = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'http://localhost:3001/api',
+  baseURL: 'https://tiffin-wallah-api.onrender.com/',
   headers: {
     'Content-Type': 'application/json'
   }
