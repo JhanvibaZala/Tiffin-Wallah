@@ -113,14 +113,14 @@ npm start
 4. Set up environment variables:
    - Create a `.env` file in the backend directory with:
    ```
-   PORT=5000
+   PORT=3001
    MONGO_URI=your_mongodb_connection_string
    JWT_SECRET=your_jwt_secret
    NODE_ENV=development
    ```
 
 5. Access the application
-   - Backend server: http://localhost:5000
+   - Backend server: http://localhost:3001
    - Frontend client: http://localhost:3000
 
 ## License
