@@ -23,7 +23,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 const allowedOrigins = [
-  'http://localhost:3000',
+  'https://tiffin-wallah-41tv-m1avrtqb4-jhanvibazalas-projects.vercel.app/',
   process.env.FRONTEND_URL,
 ].filter(Boolean);
 
