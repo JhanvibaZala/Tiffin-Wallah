@@ -17,7 +17,7 @@ const testRegister = async () => {
   
   try {
     console.log('Sending register request to API...');
-    const response = await axios.post('http://localhost:5000/api/users/register', testUser);
+    const response = await axios.post('http://localhost:3001/api/users/register', testUser);
     
     console.log('=== REGISTRATION SUCCESSFUL ===');
     console.log('Status:', response.status);
@@ -49,7 +49,7 @@ const testDBConnection = async () => {
   console.log('Testing database connection...');
   
   try {
-    const response = await axios.get('http://localhost:5000/api/users/test-db');
+    const response = await axios.get('http://localhost:3001/api/users/test-db');
     console.log('Database connection status:', response.data);
     return response.data.success;
   } catch (error) {
@@ -68,7 +68,7 @@ const runTests = async () => {
   try {
     // Test server connection
     try {
-      const serverResponse = await axios.get('http://localhost:5000/api/test');
+      const serverResponse = await axios.get('http://localhost:3001/api/test');
       console.log('Server is running:', serverResponse.data);
     } catch (error) {
       console.error('Server is not running!');

@@ -14,7 +14,7 @@ const testUser = {
 const getServerInfo = async () => {
   try {
     console.log('Getting server info...');
-    const response = await axios.get('http://localhost:5000/api/server-info');
+    const response = await axios.get('http://localhost:3001/api/server-info');
     console.log('Server info:');
     console.log(JSON.stringify(response.data, null, 2));
     return response.data;
@@ -28,7 +28,7 @@ const getServerInfo = async () => {
 const registerUser = async () => {
   try {
     console.log('\nRegistering new user:', testUser.email);
-    const response = await axios.post('http://localhost:5000/api/users/register', testUser);
+    const response = await axios.post('http://localhost:3001/api/users/register', testUser);
     console.log('Registration successful:');
     console.log(JSON.stringify(response.data, null, 2));
     return true;
@@ -48,7 +48,7 @@ const registerUser = async () => {
 const loginUser = async () => {
   try {
     console.log('\nLogging in as:', testUser.email);
-    const response = await axios.post('http://localhost:5000/api/users/login', {
+    const response = await axios.post('http://localhost:3001/api/users/login', {
       email: testUser.email,
       password: testUser.password
     });
@@ -76,7 +76,7 @@ const getUserProfile = async (token) => {
   
   try {
     console.log('\nGetting user profile...');
-    const response = await axios.get('http://localhost:5000/api/users/profile', {
+    const response = await axios.get('http://localhost:3001/api/users/profile', {
       headers: { Authorization: `Bearer ${token}` }
     });
     console.log('User profile:');

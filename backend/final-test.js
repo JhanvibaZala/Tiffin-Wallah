@@ -16,12 +16,12 @@ async function testRegistration() {
     console.log('Testing registration with user:', user.email);
     
     // Register user
-    const registerResponse = await axios.post('http://localhost:5000/api/users/register', user);
+    const registerResponse = await axios.post('http://localhost:3001/api/users/register', user);
     console.log('\nRegistration successful!');
     console.log(JSON.stringify(registerResponse.data, null, 2));
     
     // Get server info
-    const serverInfo = await axios.get('http://localhost:5000/api/server-info');
+    const serverInfo = await axios.get('http://localhost:3001/api/server-info');
     console.log('\nServer info:');
     console.log(JSON.stringify(serverInfo.data, null, 2));
     

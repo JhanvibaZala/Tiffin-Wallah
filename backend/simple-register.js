@@ -13,13 +13,13 @@ const user = {
 console.log('Testing simple registration with user:', user.email);
 
 // Try to register
-axios.post('http://localhost:5000/api/users/register', user)
+axios.post('http://localhost:3001/api/users/register', user)
   .then(response => {
     console.log('Registration successful!');
     console.log(JSON.stringify(response.data, null, 2));
     
     // Check server info
-    return axios.get('http://localhost:5000/api/server-info');
+    return axios.get('http://localhost:3001/api/server-info');
   })
   .then(response => {
     console.log('\nServer info:');

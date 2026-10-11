@@ -14,14 +14,14 @@ console.log('Testing registration functionality with MongoDB Atlas (Tiffin datab
 console.log('Test user:', testUser);
 
 // Register the user
-axios.post('http://localhost:5000/api/users/register', testUser)
+axios.post('http://localhost:3001/api/users/register', testUser)
   .then(response => {
     console.log('\nRegistration successful!');
     console.log('Status:', response.status);
     console.log('Response data:', JSON.stringify(response.data, null, 2));
     
     // Now try to login with the same credentials
-    return axios.post('http://localhost:5000/api/users/login', {
+    return axios.post('http://localhost:3001/api/users/login', {
       email: testUser.email,
       password: testUser.password
     });
@@ -34,7 +34,7 @@ axios.post('http://localhost:5000/api/users/register', testUser)
     const token = response.data.user.token;
     
     // Check server info to verify database connection
-    return axios.get('http://localhost:5000/api/server-info');
+    return axios.get('http://localhost:3001/api/server-info');
   })
   .then(response => {
     console.log('\nServer information:');
