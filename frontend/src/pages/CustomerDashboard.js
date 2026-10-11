@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Container, Row, Col, Card, Button, Tabs, Tab, Badge, ListGroup, Form, Modal } from 'react-bootstrap';
+import { useState, useEffect, useContext } from 'react';
+import { Container, Row, Col, Card, Button, Tabs, Tab, Badge, ListGroup, Form, Modal, Alert } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { getAllFoodItems, getMyOrders, getOrderById } from '../api';
 import { AuthContext } from '../utils/AuthContext';
@@ -126,7 +126,15 @@ const CustomerDashboard = () => {
   return (
     <Container>
       <h1 className="mb-4">Customer Dashboard</h1>
-      
+       {error && (
+      <Alert
+        variant="danger"
+        dismissible
+        onClose={() => setError(null)}
+      >
+        {error}
+      </Alert>
+    )}
       <Tabs defaultActiveKey="menu" id="dashboard-tabs" className="mb-4">
         {/* Food Menu Tab */}
         <Tab eventKey="menu" title="Food Menu">

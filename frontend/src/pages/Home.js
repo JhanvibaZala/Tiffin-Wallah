@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Container, Row, Col, Card, Button, Carousel, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { getAllFoodItems } from '../api';
 import { formatIndianRupee } from '../utils/currencyFormatter';
 import { motion } from 'framer-motion';
-import { FaUtensils, FaTruck, FaLeaf, FaStar, FaQuoteLeft } from 'react-icons/fa';
+import { FaLeaf, FaStar, FaQuoteLeft } from 'react-icons/fa';
 import { MdDeliveryDining, MdFoodBank } from 'react-icons/md';
 import './Home.css';
 

@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Button, Badge, Accordion } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { getAllFoodItems } from '../api';
 import { formatIndianRupee } from '../utils/currencyFormatter';
 
 const AllFoodItems = () => {
-  const [allFoodItems, setAllFoodItems] = useState([]);
   const [foodByProvider, setFoodByProvider] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     const fetchAllFoodItems = async () => {
@@ -18,7 +17,6 @@ const AllFoodItems = () => {
         setLoading(true);
         const response = await getAllFoodItems();
         const foods = response.data.data;
-        setAllFoodItems(foods);
         
         // Group food items by provider
         const groupedFood = {};
